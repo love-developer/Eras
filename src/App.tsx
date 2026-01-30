@@ -128,8 +128,7 @@ import {
   projectId,
   publicAnonKey,
 } from "./utils/supabase/info";
-import { toast, Toaster } from "sonner@2.0.3";
-
+import { toast, Toaster } from "sonner";
 // PHASE 1 PERFORMANCE OPTIMIZATION
 import { CacheService } from "./utils/cache";
 import { performanceMonitor } from "./utils/performance-monitor";
