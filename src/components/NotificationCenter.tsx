@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { X, Check, Heart, Package, Eye, Trophy, AlertCircle, Sparkles, MessageCircle, Mail, Shield, ThumbsUp } from 'lucide-react';
-import { formatDistanceToNow, format } from 'date-fns@4.1.0';
+import { formatDistanceToNow, format } from 'date-fns';
 import '../styles/notification-center.css';
 
 interface Notification {

@@ -16,7 +16,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { MessageCircle, Loader2, User } from 'lucide-react';
 import { projectId, publicAnonKey } from '../utils/supabase/info';
 import { supabase } from '../utils/supabase/client';
-import { formatDistanceToNow } from 'date-fns@4.1.0';
+import { formatDistanceToNow } from 'date-fns';
 import { CommentReactions } from './CommentReactions';
 
 interface Echo {

@@ -1,5 +1,5 @@
 // Time zone utility functions for Eras application
-import { format } from 'date-fns@4.1.0';
+import { format } from 'date-fns';
 
 // Common time zones with their IANA names and display labels
 export const TIME_ZONES = [

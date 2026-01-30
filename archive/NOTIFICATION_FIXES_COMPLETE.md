@@ -36,7 +36,7 @@
 
 **Solution**:
 - Timestamps use `Date.now()` (milliseconds since epoch)
-- Format with `formatDistanceToNow()` from date-fns@4.1.0
+- Format with `formatDistanceToNow()` from date-fns
 - Automatically updates to show "6 minutes ago", "1 hour ago", etc.
 
 **Code Flow**:
@@ -186,7 +186,7 @@ Icon: 📦 (emerald, fixed 40px circle) ✅
 - Stored in: `notification.timestamp` (number)
 
 ### **Timestamp Display**
-- Library: `date-fns@4.1.0`
+- Library: `date-fns`
 - Function: `formatDistanceToNow(timestamp, { addSuffix: true })`
 - Examples:
   - `0-59 seconds`: "less than a minute ago"

@@ -18,7 +18,7 @@ import {
   Globe
 } from 'lucide-react';
 import { toast } from 'sonner';
-import { format } from 'date-fns@4.1.0';
+import { format } from 'date-fns';
 import { DatabaseService } from '../utils/supabase/database';
 import { projectId } from '../utils/supabase/info';
 import { getUserTimeZone, getTimeZoneAbbreviation } from '../utils/timezone';

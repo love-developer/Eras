@@ -6,7 +6,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/
 import { Badge } from './ui/badge';
 import { toast } from 'sonner';
 import { supabase } from '../utils/supabase/client';
-import { formatDistanceToNow } from 'date-fns@4.1.0';
+import { formatDistanceToNow } from 'date-fns';
 import { logger } from '../utils/logger';
 
 /**

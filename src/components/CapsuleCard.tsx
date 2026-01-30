@@ -10,7 +10,7 @@ import {
   DropdownMenuTrigger,
 } from './ui/dropdown-menu';
 import { CheckCircle, Clock, User, Mail, Phone, Instagram, Twitter, Facebook, MoreVertical, Edit, Wand2, Trash2, Eye, Mic, AlertCircle } from 'lucide-react';
-import { format } from 'date-fns@4.1.0';
+import { format } from 'date-fns';
 import { toast } from 'sonner';
 
 // ✅ EXACT SAME PROPS INTERFACE - NO CHANGES

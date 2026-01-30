@@ -8,7 +8,7 @@ import {
   Search, Calendar, Clock, User, X, Star, StarOff, RefreshCw,
   CheckCircle, AlertCircle, Inbox, Sparkles, ArrowRight
 } from 'lucide-react';
-import { format, formatDistanceToNow, isAfter, startOfDay } from 'date-fns@4.1.0';
+import { format, formatDistanceToNow, isAfter, startOfDay } from 'date-fns';
 import { toast } from 'sonner';
 import { DatabaseService } from '../utils/supabase/database';
 import { supabase } from '../utils/supabase/client';
