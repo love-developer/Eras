@@ -1,0 +1,40 @@
+                {filteredCapsules.map(capsule => {
+                const isSelected = selectedCapsules.has(capsule.id);
+                
+                return (
+                  <CapsuleCard 
+                    key={capsule.isReceived ? `received-${capsule.id}` : capsule.id}
+                    capsule={capsule}
+                    isSelected={isSelected}
+                    onClick={() => setViewingCapsule(capsule)}
+                    onToggleSelect={() => {
+                      if (!capsule.isReceived) {
+                        toggleSelectCapsule(capsule.id);
+                      }
+                    }}
+                    formatRelativeDeliveryTime={formatRelativeDeliveryTime}
+                    getRecipientInfo={getRecipientInfo}
+                    getStatusDisplay={getStatusDisplay}
+                    expandedMediaCapsules={expandedMediaCapsules}
+                    onToggleMediaExpand={(id) => {
+                      setExpandedMediaCapsules(prev => {
+                        const newSet = new Set(prev);
+                        if (newSet.has(id)) {
+                          newSet.delete(id);
+                        } else {
+                          newSet.add(id);
+                        }
+                        return newSet;
+                      });
+                    }}
+                    onMediaClick={(media) => {
+                      console.log('📸 Dashboard - Media clicked:', media);
+                      setPreviewAttachment(media);
+                    }}
+                    onEditDetails={(capsule) => handleEditCapsule(capsule)}
+                    onEditCapsule={(capsule) => handleEditCapsule(capsule)}
+                    onDelete={(capsule) => handleDeleteCapsule(capsule)}
+                    canEditCapsule={canEditCapsule}
+                  />
+                );
+              })}

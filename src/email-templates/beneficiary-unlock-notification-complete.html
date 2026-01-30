@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Legacy Vault Unlocked - Eras</title>
+</head>
+<body style="margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; background-color: #0f172a; color: #e2e8f0;">
+  
+  <!-- Main Container -->
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color: #0f172a;">
+    <tr>
+      <td align="center" style="padding: 40px 20px;">
+        
+        <!-- Content Card -->
+        <table role="presentation" width="600" cellpadding="0" cellspacing="0" border="0" style="background-color: #1e293b; border-radius: 16px; overflow: hidden; box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);">
+          
+          <!-- Header with Gradient Banner -->
+          <tr>
+            <td style="background: linear-gradient(135deg, #a855f7 0%, #ec4899 100%); padding: 40px 30px; text-align: center;">
+              <div style="width: 60px; height: 60px; background-color: rgba(255, 255, 255, 0.2); border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 16px;">
+                <span style="font-size: 32px;">🔓</span>
+              </div>
+              <h1 style="margin: 0; font-size: 28px; font-weight: 700; color: #ffffff; line-height: 1.2;">
+                Legacy Vault Unlocked
+              </h1>
+              <p style="margin: 12px 0 0 0; font-size: 16px; color: rgba(255, 255, 255, 0.9); line-height: 1.5;">
+                You now have access to {{ownerName}}'s memories
+              </p>
+            </td>
+          </tr>
+
+          <!-- Personal Message (if provided) -->
+          {{#if personalMessage}}
+          <tr>
+            <td style="padding: 30px; background: linear-gradient(135deg, rgba(236, 72, 153, 0.1) 0%, rgba(168, 85, 247, 0.1) 100%); border-bottom: 1px solid rgba(168, 85, 247, 0.2);">
+              <div style="text-align: center;">
+                <div style="font-size: 24px; margin-bottom: 12px;">💌</div>
+                <h3 style="margin: 0 0 12px 0; font-size: 18px; font-weight: 600; color: #f472b6;">
+                  Personal Message
+                </h3>
+                <p style="margin: 0; font-size: 15px; font-style: italic; color: #cbd5e1; line-height: 1.6;">
+                  "{{personalMessage}}"
+                </p>
+              </div>
+            </td>
+          </tr>
+          {{/if}}
+
+          <!-- Main Content -->
+          <tr>
+            <td style="padding: 40px 30px;">
+              
+              <!-- Intro Text -->
+              <p style="margin: 0 0 24px 0; font-size: 16px; color: #cbd5e1; line-height: 1.6;">
+                Hi {{beneficiaryName}},
+              </p>
+              <p style="margin: 0 0 24px 0; font-size: 16px; color: #cbd5e1; line-height: 1.6;">
+                <strong style="color: #e2e8f0;">{{ownerName}}</strong> designated you as a beneficiary for their Eras legacy vault. After <strong style="color: #e2e8f0;">{{inactivityDays}} days</strong> of account inactivity, their vault has been unlocked and is now accessible to you.
+              </p>
+
+              <!-- Vault Stats -->
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin: 30px 0;">
+                <tr>
+                  <td style="padding: 20px; background-color: #0ea5e9; background: linear-gradient(135deg, rgba(14, 165, 233, 0.15) 0%, rgba(6, 182, 212, 0.15) 100%); border: 1px solid rgba(14, 165, 233, 0.3); border-radius: 12px;">
+                    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+                      <tr>
+                        <td width="33%" align="center" style="padding: 12px;">
+                          <div style="font-size: 32px; margin-bottom: 8px;">📁</div>
+                          <div style="font-size: 28px; font-weight: 700; color: #06b6d4; margin-bottom: 4px;">{{folderCount}}</div>
+                          <div style="font-size: 13px; color: #94a3b8;">Folders</div>
+                        </td>
+                        <td width="33%" align="center" style="padding: 12px; border-left: 1px solid rgba(14, 165, 233, 0.2); border-right: 1px solid rgba(14, 165, 233, 0.2);">
+                          <div style="font-size: 32px; margin-bottom: 8px;">📸</div>
+                          <div style="font-size: 28px; font-weight: 700; color: #a855f7; margin-bottom: 4px;">{{itemCount}}</div>
+                          <div style="font-size: 13px; color: #94a3b8;">Items</div>
+                        </td>
+                        <td width="33%" align="center" style="padding: 12px;">
+                          <div style="font-size: 32px; margin-bottom: 8px;">⏰</div>
+                          <div style="font-size: 28px; font-weight: 700; color: #f59e0b; margin-bottom: 4px;">1 yr</div>
+                          <div style="font-size: 13px; color: #94a3b8;">Access</div>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+
+              <!-- Folder Preview (if provided) -->
+              {{#if folders}}
+              <div style="margin: 30px 0;">
+                <h3 style="margin: 0 0 16px 0; font-size: 18px; font-weight: 600; color: #e2e8f0;">
+                  What's Inside
+                </h3>
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+                  {{#each folders}}
+                  <tr>
+                    <td style="padding: 12px; background-color: rgba(30, 41, 59, 0.5); border: 1px solid #334155; border-radius: 8px; margin-bottom: 8px;">
+                      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+                        <tr>
+                          <td width="40" valign="middle">
+                            <span style="font-size: 24px;">{{icon}}</span>
+                          </td>
+                          <td valign="middle" style="padding-left: 12px;">
+                            <div style="font-size: 15px; font-weight: 600; color: #e2e8f0; margin-bottom: 2px;">{{name}}</div>
+                            <div style="font-size: 13px; color: #94a3b8;">{{itemCount}} items • {{permission}}</div>
+                          </td>
+                          <td width="80" align="right" valign="middle">
+                            {{#if (eq permission 'view')}}
+                            <span style="display: inline-block; padding: 4px 10px; background-color: rgba(59, 130, 246, 0.2); color: #60a5fa; border-radius: 6px; font-size: 11px; font-weight: 600;">👁️ VIEW</span>
+                            {{/if}}
+                            {{#if (eq permission 'download')}}
+                            <span style="display: inline-block; padding: 4px 10px; background-color: rgba(16, 185, 129, 0.2); color: #34d399; border-radius: 6px; font-size: 11px; font-weight: 600;">⬇️ DOWNLOAD</span>
+                            {{/if}}
+                            {{#if (eq permission 'full')}}
+                            <span style="display: inline-block; padding: 4px 10px; background-color: rgba(168, 85, 247, 0.2); color: #a855f7; border-radius: 6px; font-size: 11px; font-weight: 600;">🔓 FULL</span>
+                            {{/if}}
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                  <tr><td style="height: 8px;"></td></tr>
+                  {{/each}}
+                </table>
+              </div>
+              {{/if}}
+
+              <!-- What This Means -->
+              <div style="margin: 30px 0; padding: 20px; background: linear-gradient(135deg, rgba(168, 85, 247, 0.1) 0%, rgba(59, 130, 246, 0.1) 100%); border: 1px solid rgba(168, 85, 247, 0.2); border-radius: 12px;">
+                <h3 style="margin: 0 0 16px 0; font-size: 16px; font-weight: 600; color: #a78bfa; display: flex; align-items: center;">
+                  <span style="margin-right: 8px;">🛡️</span> What This Means
+                </h3>
+                <ul style="margin: 0; padding-left: 20px; font-size: 14px; color: #cbd5e1; line-height: 1.7;">
+                  <li style="margin-bottom: 8px;"><strong style="color: #e2e8f0;">Access:</strong> You can view and download (based on permissions) {{ownerName}}'s vault content.</li>
+                  <li style="margin-bottom: 8px;"><strong style="color: #e2e8f0;">Duration:</strong> Access is valid for 1 year from today (until {{expirationDate}}).</li>
+                  <li style="margin-bottom: 8px;"><strong style="color: #e2e8f0;">Privacy:</strong> Your access is logged, but {{ownerName}} cannot see when you view content.</li>
+                  <li style="margin-bottom: 0;"><strong style="color: #e2e8f0;">Read-Only:</strong> You cannot modify or delete the original vault content.</li>
+                </ul>
+              </div>
+
+              <!-- CTA Button -->
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin: 36px 0 24px 0;">
+                <tr>
+                  <td align="center">
+                    <a href="{{accessUrl}}" style="display: inline-block; padding: 16px 40px; background: linear-gradient(135deg, #a855f7 0%, #ec4899 100%); color: #ffffff; text-decoration: none; font-weight: 600; font-size: 16px; border-radius: 10px; box-shadow: 0 4px 6px rgba(168, 85, 247, 0.3);">
+                      🔓 Access Vault Now
+                    </a>
+                  </td>
+                </tr>
+              </table>
+
+              <!-- Alternative Link -->
+              <p style="margin: 24px 0 0 0; font-size: 13px; color: #64748b; text-align: center; line-height: 1.6;">
+                Button not working? Copy and paste this link:<br>
+                <a href="{{accessUrl}}" style="color: #a855f7; text-decoration: underline; word-break: break-all;">{{accessUrl}}</a>
+              </p>
+
+            </td>
+          </tr>
+
+          <!-- Important Notice -->
+          <tr>
+            <td style="padding: 24px 30px; background-color: rgba(234, 179, 8, 0.1); border-top: 1px solid rgba(234, 179, 8, 0.2);">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                  <td width="32" valign="top">
+                    <div style="font-size: 24px;">⚠️</div>
+                  </td>
+                  <td style="padding-left: 12px;">
+                    <h4 style="margin: 0 0 8px 0; font-size: 15px; font-weight: 600; color: #fbbf24;">
+                      Important: Time-Limited Access
+                    </h4>
+                    <p style="margin: 0; font-size: 14px; color: #94a3b8; line-height: 1.6;">
+                      This vault will remain accessible until <strong style="color: #cbd5e1;">{{expirationDate}}</strong>. We recommend downloading important items to your personal device for permanent storage.
+                    </p>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- Footer -->
+          <tr>
+            <td style="padding: 30px; background-color: #0f172a; text-align: center; border-top: 1px solid #334155;">
+              <p style="margin: 0 0 12px 0; font-size: 14px; color: #64748b;">
+                Questions about legacy access?
+              </p>
+              <p style="margin: 0 0 20px 0;">
+                <a href="https://eras.app/help/legacy-access" style="color: #a855f7; text-decoration: none; font-weight: 500;">Visit Help Center</a>
+                <span style="color: #475569; margin: 0 8px;">•</span>
+                <a href="mailto:support@eras.app" style="color: #a855f7; text-decoration: none; font-weight: 500;">Contact Support</a>
+              </p>
+              <div style="margin: 20px 0 0 0; padding-top: 20px; border-top: 1px solid #1e293b;">
+                <p style="margin: 0 0 8px 0; font-size: 20px; font-weight: 700; color: #a855f7;">
+                  Eras
+                </p>
+                <p style="margin: 0; font-size: 12px; color: #64748b;">
+                  Preserve your memories, protect your legacy
+                </p>
+              </div>
+            </td>
+          </tr>
+
+        </table>
+        
+        <!-- Fine Print -->
+        <table role="presentation" width="600" cellpadding="0" cellspacing="0" border="0" style="margin-top: 20px;">
+          <tr>
+            <td style="padding: 0 20px; text-align: center;">
+              <p style="margin: 0; font-size: 12px; color: #475569; line-height: 1.6;">
+                This email was sent to {{beneficiaryEmail}} because you were designated as a beneficiary.<br>
+                Access link expires: {{expirationDate}}
+              </p>
+            </td>
+          </tr>
+        </table>
+
+      </td>
+    </tr>
+  </table>
+
+</body>
+</html>

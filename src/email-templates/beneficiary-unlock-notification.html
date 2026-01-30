@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Legacy Vault Unlocked - Eras</title>
+</head>
+<body style="margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; background-color: #0f172a;">
+  <table width="100%" cellpadding="0" cellspacing="0" style="background-color: #0f172a;">
+    <tr>
+      <td align="center" style="padding: 40px 20px;">
+        <!-- Main Container -->
+        <table width="600" cellpadding="0" cellspacing="0" style="background: linear-gradient(135deg, #1e1b4b 0%, #064e3b 100%); border-radius: 16px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.5);">
+          
+          <!-- Header -->
+          <tr>
+            <td align="center" style="padding: 40px 20px; background: linear-gradient(to right, rgba(16,185,129,0.2), rgba(59,130,246,0.2)); border-bottom: 2px solid rgba(255,255,255,0.1);">
+              <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #10b981, #3b82f6); border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 16px;">
+                <span style="font-size: 32px;">🔓</span>
+              </div>
+              <h1 style="margin: 0; font-size: 28px; color: white; font-weight: 700;">A Legacy Vault Has Been Unlocked for You</h1>
+              <p style="margin: 8px 0 0 0; font-size: 16px; color: #a7f3d0;">{{userName}}'s time capsules are now accessible</p>
+            </td>
+          </tr>
+          
+          <!-- Main Content -->
+          <tr>
+            <td style="padding: 40px 30px;">
+              <p style="margin: 0 0 24px 0; font-size: 16px; line-height: 1.6; color: #e2e8f0;">
+                Hello <strong style="color: white;">{{beneficiaryName}}</strong>,
+              </p>
+              
+              <p style="margin: 0 0 24px 0; font-size: 16px; line-height: 1.6; color: #e2e8f0;">
+                <strong style="color: white; font-size: 18px;">{{userName}}</strong>'s Eras account has been inactive for {{inactivityDays}} days. As their verified beneficiary, you now have access to their time capsules and legacy vault.
+              </p>
+              
+              <!-- What's Inside Box -->
+              <div style="background: rgba(16,185,129,0.15); border-left: 4px solid #10b981; padding: 20px; margin: 24px 0; border-radius: 8px;">
+                <h3 style="margin: 0 0 12px 0; font-size: 16px; color: #a7f3d0; font-weight: 600;">What You Can Access</h3>
+                <ul style="margin: 0; padding-left: 20px; color: #e2e8f0; font-size: 14px; line-height: 1.8;">
+                  <li><strong style="color: white;">{{folderCount}} Vault Folders</strong> with photos, videos, and documents</li>
+                  <li><strong style="color: white;">{{mediaCount}} Total Items</strong> organized by topic and time period</li>
+                  <li><strong style="color: white;">Personal Messages</strong> that {{userName}} left for you</li>
+                  <li><strong style="color: white;">Full Download Access</strong> to preserve these memories forever</li>
+                </ul>
+              </div>
+              
+              <!-- Folders Preview -->
+              <div style="background: rgba(59,130,246,0.1); border-radius: 8px; padding: 20px; margin: 24px 0;">
+                <h3 style="margin: 0 0 16px 0; font-size: 16px; color: #93c5fd; font-weight: 600;">Folders Shared With You</h3>
+                {{foldersPreview}}
+              </div>
+              
+              <!-- Personal Message (if exists) -->
+              {{personalMessageSection}}
+              
+              <!-- Access Instructions -->
+              <div style="background: rgba(234,179,8,0.15); border-left: 4px solid #eab308; padding: 20px; margin: 24px 0; border-radius: 8px;">
+                <h3 style="margin: 0 0 12px 0; font-size: 16px; color: #fef08a; font-weight: 600;">How to Access</h3>
+                <ol style="margin: 0; padding-left: 20px; color: #e2e8f0; font-size: 14px; line-height: 1.8;">
+                  <li>Click the access button below (your unique secure link)</li>
+                  <li>You'll be taken to a read-only view of {{userName}}'s vault</li>
+                  <li>Browse folders, view content, and download what you want to preserve</li>
+                  <li>This access link is valid for <strong style="color: white;">1 year</strong></li>
+                </ol>
+              </div>
+              
+              <!-- CTA Button -->
+              <table width="100%" cellpadding="0" cellspacing="0" style="margin: 32px 0;">
+                <tr>
+                  <td align="center">
+                    <a href="{{accessUrl}}" style="display: inline-block; padding: 16px 40px; background: linear-gradient(135deg, #10b981, #3b82f6); color: white; text-decoration: none; border-radius: 8px; font-weight: 600; font-size: 18px; box-shadow: 0 4px 12px rgba(16,185,129,0.4);">
+                      🔓 Access {{userName}}'s Vault
+                    </a>
+                  </td>
+                </tr>
+              </table>
+              
+              <!-- Alternative Link -->
+              <p style="margin: 24px 0 0 0; font-size: 13px; line-height: 1.6; color: #94a3b8; text-align: center;">
+                Button not working? Copy and paste this link:<br>
+                <a href="{{accessUrl}}" style="color: #10b981; word-break: break-all;">{{accessUrl}}</a>
+              </p>
+              
+              <!-- Important Notes -->
+              <div style="background: rgba(59,130,246,0.15); border: 1px solid rgba(59,130,246,0.3); padding: 16px; margin: 24px 0; border-radius: 8px;">
+                <h4 style="margin: 0 0 8px 0; font-size: 14px; color: #93c5fd; font-weight: 600;">📋 Important Notes</h4>
+                <ul style="margin: 0; padding-left: 20px; color: #e2e8f0; font-size: 13px; line-height: 1.6;">
+                  <li>This access is <strong style="color: white;">read-only</strong> - you cannot edit or delete {{userName}}'s content</li>
+                  <li>Your access is <strong style="color: white;">logged</strong> for security and transparency</li>
+                  <li>If {{userName}} logs back in, their account will be reactivated and your access may be revoked</li>
+                  <li>Download important content to preserve it permanently</li>
+                </ul>
+              </div>
+              
+              <!-- Security Notice -->
+              <div style="background: rgba(168,85,247,0.15); border: 1px solid rgba(168,85,247,0.3); padding: 16px; margin: 24px 0; border-radius: 8px;">
+                <p style="margin: 0; font-size: 13px; color: #e9d5ff; line-height: 1.6;">
+                  <strong>🔒 Security Notice:</strong> This access link is unique to you and should not be shared. Anyone with this link can view {{userName}}'s vault content.
+                </p>
+              </div>
+              
+              <p style="margin: 24px 0 0 0; font-size: 14px; line-height: 1.6; color: #94a3b8; text-align: center;">
+                Access link valid until: <strong style="color: #cbd5e1;">{{expirationDate}}</strong>
+              </p>
+            </td>
+          </tr>
+          
+          <!-- Footer -->
+          <tr>
+            <td style="padding: 30px; background: rgba(0,0,0,0.3); border-top: 1px solid rgba(255,255,255,0.1);">
+              <p style="margin: 0 0 12px 0; font-size: 13px; color: #94a3b8; text-align: center;">
+                Account became inactive on: <strong style="color: #cbd5e1;">{{inactiveDate}}</strong>
+              </p>
+              <p style="margin: 0 0 12px 0; font-size: 12px; color: #64748b; text-align: center;">
+                This email was sent to <strong>{{beneficiaryEmail}}</strong>
+              </p>
+              <p style="margin: 0; font-size: 12px; color: #64748b; text-align: center;">
+                Questions or concerns? Contact support@eras.app
+              </p>
+            </td>
+          </tr>
+          
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>

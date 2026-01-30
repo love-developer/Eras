@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Legacy Access Granted - Eras</title>
+</head>
+<body style="margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; background-color: #0f172a;">
+  <table width="100%" cellpadding="0" cellspacing="0" style="background-color: #0f172a;">
+    <tr>
+      <td align="center" style="padding: 40px 20px;">
+        <!-- Main Container -->
+        <table width="600" cellpadding="0" cellspacing="0" style="background: linear-gradient(135deg, #1e1b4b 0%, #164e63 100%); border-radius: 16px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.5);">
+          
+          <!-- Header -->
+          <tr>
+            <td align="center" style="padding: 40px 20px; background: linear-gradient(to right, rgba(56,189,248,0.2), rgba(168,85,247,0.2)); border-bottom: 2px solid rgba(255,255,255,0.1);">
+              <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #38bdf8, #a855f7); border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 16px;">
+                <span style="font-size: 32px;">🔓</span>
+              </div>
+              <h1 style="margin: 0; font-size: 28px; color: white; font-weight: 700;">Legacy Access Granted</h1>
+              <p style="margin: 8px 0 0 0; font-size: 16px; color: #bae6fd;">You can now access {{userName}}'s memories</p>
+            </td>
+          </tr>
+          
+          <!-- Main Content -->
+          <tr>
+            <td style="padding: 40px 30px;">
+              <p style="margin: 0 0 24px 0; font-size: 16px; line-height: 1.6; color: #e2e8f0;">
+                Hello <strong style="color: white;">{{beneficiaryEmail}}</strong>,
+              </p>
+              
+              <p style="margin: 0 0 24px 0; font-size: 16px; line-height: 1.6; color: #e2e8f0;">
+                <strong style="color: white; font-size: 18px;">{{userName}}</strong>'s Eras account has been inactive for {{inactivityDays}} days. As their designated beneficiary, you now have access to their time capsules and memories.
+              </p>
+              
+              <!-- Info Box -->
+              <div style="background: rgba(56,189,248,0.15); border-left: 4px solid #38bdf8; padding: 20px; margin: 24px 0; border-radius: 8px;">
+                <h3 style="margin: 0 0 12px 0; font-size: 16px; color: #bae6fd; font-weight: 600;">What You Can Access</h3>
+                <ul style="margin: 0; padding-left: 20px; color: #e2e8f0; font-size: 14px; line-height: 1.8;">
+                  <li><strong style="color: white;">Time Capsules:</strong> {{capsuleCount}} capsules with photos, videos, and messages</li>
+                  <li><strong style="color: white;">Legacy Vault:</strong> {{vaultItemCount}} saved memories organized in folders</li>
+                  <li><strong style="color: white;">Voice Messages:</strong> Personal audio recordings</li>
+                  <li><strong style="color: white;">Written Memories:</strong> Stories, reflections, and notes</li>
+                </ul>
+              </div>
+              
+              <!-- Account Stats -->
+              <table width="100%" cellpadding="0" cellspacing="0" style="margin: 24px 0;">
+                <tr>
+                  <td width="50%" style="padding: 8px;">
+                    <div style="text-align: center; padding: 16px; background: rgba(168,85,247,0.2); border-radius: 8px; border: 1px solid rgba(168,85,247,0.3);">
+                      <div style="font-size: 32px; font-weight: 700; color: #a855f7; margin-bottom: 4px;">
+                        {{capsuleCount}}
+                      </div>
+                      <div style="font-size: 12px; color: #e9d5ff; text-transform: uppercase; letter-spacing: 0.05em;">
+                        Capsules
+                      </div>
+                    </div>
+                  </td>
+                  <td width="50%" style="padding: 8px;">
+                    <div style="text-align: center; padding: 16px; background: rgba(56,189,248,0.2); border-radius: 8px; border: 1px solid rgba(56,189,248,0.3);">
+                      <div style="font-size: 32px; font-weight: 700; color: #38bdf8; margin-bottom: 4px;">
+                        {{vaultItemCount}}
+                      </div>
+                      <div style="font-size: 12px; color: #bae6fd; text-transform: uppercase; letter-spacing: 0.05em;">
+                        Vault Items
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </table>
+              
+              <!-- Personal Message (if exists) -->
+              {{legacyMessageSection}}
+              
+              <!-- Access Instructions -->
+              <div style="background: rgba(234,179,8,0.15); border-left: 4px solid #eab308; padding: 20px; margin: 24px 0; border-radius: 8px;">
+                <h3 style="margin: 0 0 12px 0; font-size: 16px; color: #fef08a; font-weight: 600;">How to Access</h3>
+                <ol style="margin: 0; padding-left: 20px; color: #e2e8f0; font-size: 14px; line-height: 1.8;">
+                  <li>Click the button below to create your Eras account (or log in)</li>
+                  <li>Use the email address: <strong style="color: white;">{{beneficiaryEmail}}</strong></li>
+                  <li>{{userName}}'s memories will appear in your "Legacy Access" section</li>
+                  <li>You'll be able to view, download, and preserve their content</li>
+                </ol>
+              </div>
+              
+              <!-- CTA Button -->
+              <table width="100%" cellpadding="0" cellspacing="0" style="margin: 32px 0;">
+                <tr>
+                  <td align="center">
+                    <a href="{{accessUrl}}" style="display: inline-block; padding: 16px 40px; background: linear-gradient(135deg, #38bdf8, #a855f7); color: white; text-decoration: none; border-radius: 8px; font-weight: 600; font-size: 18px; box-shadow: 0 4px 12px rgba(56,189,248,0.4);">
+                      🔓 Access {{userName}}'s Memories
+                    </a>
+                  </td>
+                </tr>
+              </table>
+              
+              <!-- Important Note -->
+              <div style="background: rgba(239,68,68,0.15); border: 1px solid rgba(239,68,68,0.3); padding: 16px; margin: 24px 0; border-radius: 8px;">
+                <p style="margin: 0; font-size: 13px; color: #fecaca; line-height: 1.6;">
+                  <strong>Important:</strong> If {{userName}} logs back into their account, their account will be reactivated and your access may be revoked. This is part of the Legacy Access system to ensure their privacy while they're active.
+                </p>
+              </div>
+              
+              <p style="margin: 24px 0 0 0; font-size: 14px; line-height: 1.6; color: #94a3b8; text-align: center;">
+                Access expires in 90 days. Log in regularly to maintain access.
+              </p>
+            </td>
+          </tr>
+          
+          <!-- Footer -->
+          <tr>
+            <td style="padding: 30px; background: rgba(0,0,0,0.3); border-top: 1px solid rgba(255,255,255,0.1);">
+              <p style="margin: 0 0 12px 0; font-size: 13px; color: #94a3b8; text-align: center;">
+                Account became inactive on: <strong style="color: #cbd5e1;">{{inactiveDate}}</strong>
+              </p>
+              <p style="margin: 0; font-size: 12px; color: #64748b; text-align: center;">
+                Questions? Contact support@eras.app
+              </p>
+            </td>
+          </tr>
+          
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>

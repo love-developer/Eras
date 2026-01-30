@@ -1,0 +1,63 @@
+/* CRITICAL MOBILE TEXTAREA FIX - HIGHEST PRIORITY */
+/* This file contains nuclear-level overrides to fix centered text in textareas on mobile */
+
+/* Apply to ALL devices */
+textarea,
+textarea#message,
+[data-slot="textarea"] {
+  text-align: left !important;
+  -webkit-text-align: left !important;
+  -moz-text-align: left !important;
+  -ms-text-align: left !important;
+  display: block !important;
+  -webkit-appearance: none !important;
+  appearance: none !important;
+}
+
+/* Mobile-specific aggressive overrides */
+@media screen and (max-width: 1023px) {
+  textarea,
+  textarea#message,
+  [data-slot="textarea"] {
+    text-align: left !important;
+    -webkit-text-align: left !important;
+    direction: ltr !important;
+    text-justify: none !important;
+    
+    /* Force left alignment at every level */
+    justify-content: flex-start !important;
+    -webkit-justify-content: flex-start !important;
+    -webkit-box-pack: start !important;
+    align-items: flex-start !important;
+    -webkit-align-items: flex-start !important;
+    -webkit-box-align: start !important;
+    
+    /* Override any display that might center */
+    display: block !important;
+    -webkit-box-orient: vertical !important;
+    -webkit-box-direction: normal !important;
+  }
+}
+
+/* iPhone specific nuclear override */
+@media screen and (-webkit-min-device-pixel-ratio: 2) {
+  textarea,
+  textarea#message,
+  [data-slot="textarea"],
+  form textarea {
+    text-align: left !important;
+    -webkit-text-align: left !important;
+    display: block !important;
+  }
+}
+
+/* iOS Safari specific */
+@supports (-webkit-touch-callout: none) {
+  textarea,
+  textarea#message,
+  [data-slot="textarea"] {
+    text-align: left !important;
+    -webkit-text-align: left !important;
+    display: block !important;
+  }
+}

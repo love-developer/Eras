@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eras Documentation - Quick Links</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #e2e8f0;
+            padding: 2rem;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+        }
+        
+        .header p {
+            color: #94a3b8;
+            font-size: 1.1rem;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .card {
+            background: rgba(30, 41, 59, 0.5);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(99, 102, 241, 0.5);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+        }
+        
+        .card-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            margin-bottom: 1rem;
+        }
+        
+        .card h2 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: #f1f5f9;
+        }
+        
+        .card p {
+            color: #94a3b8;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        
+        .card-link {
+            display: inline-block;
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+            color: white;
+            text-decoration: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .card-link:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 15px -3px rgba(99, 102, 241, 0.4);
+        }
+        
+        .url-code {
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid rgba(71, 85, 105, 0.5);
+            border-radius: 0.5rem;
+            padding: 0.5rem 1rem;
+            font-family: 'Courier New', monospace;
+            color: #a78bfa;
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+        }
+        
+        .features {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(71, 85, 105, 0.3);
+        }
+        
+        .features h3 {
+            font-size: 0.9rem;
+            color: #cbd5e1;
+            margin-bottom: 0.5rem;
+        }
+        
+        .features ul {
+            list-style: none;
+            color: #94a3b8;
+            font-size: 0.85rem;
+        }
+        
+        .features li {
+            padding: 0.25rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .features li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #6366f1;
+        }
+        
+        .badge {
+            display: inline-block;
+            background: rgba(99, 102, 241, 0.2);
+            color: #a5b4fc;
+            padding: 0.25rem 0.75rem;
+            border-radius: 1rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-left: 0.5rem;
+        }
+        
+        .badge.new {
+            background: rgba(34, 197, 94, 0.2);
+            color: #86efac;
+        }
+        
+        .badge.updated {
+            background: rgba(251, 146, 60, 0.2);
+            color: #fdba74;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(71, 85, 105, 0.3);
+            color: #64748b;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🌟 Eras Documentation</h1>
+            <p>Complete system architecture, error reporting, and legal documents</p>
+        </div>
+        
+        <div class="grid">
+            <!-- System Architecture -->
+            <div class="card">
+                <div class="card-icon">📚</div>
+                <h2>System Architecture <span class="badge new">NEW</span></h2>
+                <p>Complete technical documentation with component tree, error locations, testing guide, and data flows.</p>
+                <div class="url-code">/architecture</div>
+                <div class="features">
+                    <h3>Includes:</h3>
+                    <ul>
+                        <li>All components & file paths</li>
+                        <li>Error debugging guide</li>
+                        <li>Testing recommendations</li>
+                        <li>Data flow diagrams</li>
+                        <li>Quick reference</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Bug Report -->
+            <div class="card">
+                <div class="card-icon">🐛</div>
+                <h2>Bug Report Template <span class="badge new">NEW</span></h2>
+                <p>Structured error reporting form with auto-generated environment details and downloadable reports.</p>
+                <div class="url-code">/report-bug</div>
+                <div class="features">
+                    <h3>Features:</h3>
+                    <ul>
+                        <li>Component selection</li>
+                        <li>Error categorization</li>
+                        <li>Console error capture</li>
+                        <li>Copy to clipboard</li>
+                        <li>Download as markdown</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Terms of Service -->
+            <div class="card">
+                <div class="card-icon">📋</div>
+                <h2>Terms of Service <span class="badge updated">v2.0</span></h2>
+                <p>Updated terms covering all new features including Echo system, achievements, and AI enhancements.</p>
+                <div class="url-code">/terms</div>
+                <div class="features">
+                    <h3>Updated Nov 25, 2025:</h3>
+                    <ul>
+                        <li>Social features policy</li>
+                        <li>Notification terms</li>
+                        <li>Achievement rules</li>
+                        <li>AI usage terms</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Privacy Policy -->
+            <div class="card">
+                <div class="card-icon">🔒</div>
+                <h2>Privacy Policy <span class="badge updated">v2.0</span></h2>
+                <p>Comprehensive privacy policy covering data collection, usage, and third-party integrations.</p>
+                <div class="url-code">/privacy</div>
+                <div class="features">
+                    <h3>Updated Nov 25, 2025:</h3>
+                    <ul>
+                        <li>Echo data handling</li>
+                        <li>Real-time connections</li>
+                        <li>Email delivery (Resend)</li>
+                        <li>Achievement tracking</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div style="background: rgba(99, 102, 241, 0.1); border: 1px solid rgba(99, 102, 241, 0.3); border-radius: 1rem; padding: 2rem; margin-top: 2rem;">
+            <h2 style="margin-bottom: 1rem;">🎯 Quick Access</h2>
+            <p style="color: #cbd5e1; margin-bottom: 1rem;">Multiple ways to access documentation:</p>
+            <ul style="list-style: none; color: #94a3b8;">
+                <li style="padding: 0.5rem 0;">1. <strong style="color: #e2e8f0;">Direct URLs</strong>: Navigate to the routes above</li>
+                <li style="padding: 0.5rem 0;">2. <strong style="color: #e2e8f0;">Settings Page</strong>: Find links in the About section</li>
+                <li style="padding: 0.5rem 0;">3. <strong style="color: #e2e8f0;">Floating Button</strong>: Click the purple button (bottom-right when logged in)</li>
+            </ul>
+        </div>
+        
+        <footer>
+            <p><strong>Eras Time Capsule App</strong></p>
+            <p style="margin-top: 0.5rem;">Documentation System v1.0 • November 25, 2025</p>
+            <p style="margin-top: 0.5rem; font-size: 0.85rem;">All documentation pages are fully responsive and work on mobile devices</p>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,276 @@
+/* Legacy Access & Beneficiaries Animations */
+
+/* Key Generation Animation */
+@keyframes key-generation {
+  0% {
+    transform: rotate(0deg) scale(1);
+    opacity: 0.5;
+  }
+  25% {
+    transform: rotate(90deg) scale(1.2);
+    opacity: 1;
+  }
+  50% {
+    transform: rotate(180deg) scale(1);
+    opacity: 0.8;
+  }
+  75% {
+    transform: rotate(270deg) scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+    opacity: 1;
+  }
+}
+
+/* Security Shield Pulse */
+@keyframes security-pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.7);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(59, 130, 246, 0);
+    transform: scale(1.05);
+  }
+}
+
+/* Verification Flow Step Animation */
+@keyframes verification-step {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Unlock Countdown Animation */
+@keyframes unlock-countdown {
+  0%, 100% {
+    color: #f97316;
+    transform: scale(1);
+  }
+  50% {
+    color: #ea580c;
+    transform: scale(1.1);
+  }
+}
+
+/* Beneficiary Status Badge Glow */
+@keyframes badge-glow {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(34, 197, 94, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 15px rgba(34, 197, 94, 0.6);
+  }
+}
+
+/* Cryptographic Lock Animation */
+@keyframes crypto-lock {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-10deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+  75% {
+    transform: rotate(-10deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+/* Access Granted Success */
+@keyframes access-granted {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Inactivity Timer Tick */
+@keyframes timer-tick {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Nonce Code Generation */
+@keyframes nonce-generation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Animation Classes */
+.animate-key-generation {
+  animation: key-generation 2s ease-in-out;
+}
+
+.animate-security-pulse {
+  animation: security-pulse 2s ease-in-out infinite;
+}
+
+.animate-verification-step {
+  animation: verification-step 0.5s ease-out forwards;
+}
+
+.animate-unlock-countdown {
+  animation: unlock-countdown 2s ease-in-out infinite;
+}
+
+.animate-badge-glow {
+  animation: badge-glow 2s ease-in-out infinite;
+}
+
+.animate-crypto-lock {
+  animation: crypto-lock 1s ease-in-out;
+}
+
+.animate-access-granted {
+  animation: access-granted 0.6s ease-out;
+}
+
+.animate-timer-tick {
+  animation: timer-tick 1s ease-in-out infinite;
+}
+
+.animate-nonce-generation {
+  background: linear-gradient(90deg, #3b82f6, #8b5cf6, #3b82f6);
+  background-size: 200% 200%;
+  animation: nonce-generation 3s ease infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Trust-Oriented Color Palette for Legacy Access */
+.legacy-trust-bg {
+  background: linear-gradient(135deg, #eff6ff 0%, #e0e7ff 100%);
+}
+
+.dark .legacy-trust-bg {
+  background: linear-gradient(135deg, rgba(30, 58, 138, 0.2) 0%, rgba(67, 56, 202, 0.2) 100%);
+}
+
+.legacy-security-border {
+  border: 2px solid #93c5fd;
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.1);
+}
+
+.dark .legacy-security-border {
+  border: 2px solid #3b82f6;
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.2);
+}
+
+/* Hover Effects for Beneficiary Cards */
+.beneficiary-card {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.beneficiary-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.dark .beneficiary-card:hover {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Unlock Condition Selection */
+.unlock-condition-option {
+  transition: all 0.2s ease;
+}
+
+.unlock-condition-option:hover {
+  transform: scale(1.02);
+}
+
+.unlock-condition-option.selected {
+  animation: security-pulse 2s ease-in-out;
+}
+
+/* Progress Indicator for Activity Monitoring */
+.activity-progress {
+  background: linear-gradient(90deg, #10b981, #059669);
+  transition: width 0.5s ease-in-out;
+}
+
+/* Verification Code Display */
+.verification-code {
+  font-family: 'SF Mono', 'Monaco', 'Cascadia Code', 'Roboto Mono', monospace;
+  letter-spacing: 0.1em;
+  background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+  border: 2px dashed #3b82f6;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  animation: nonce-generation 3s ease infinite;
+}
+
+.dark .verification-code {
+  background: linear-gradient(135deg, rgba(30, 58, 138, 0.2), rgba(59, 130, 246, 0.1));
+  border-color: #60a5fa;
+}
+
+/* Mobile Responsive Adjustments */
+@media screen and (max-width: 768px) {
+  .legacy-beneficiary-grid {
+    grid-template-columns: 1fr !important;
+  }
+  
+  .legacy-unlock-options {
+    grid-template-columns: 1fr !important;
+  }
+  
+  .legacy-inactivity-periods {
+    grid-template-columns: 1fr 1fr !important;
+  }
+}
+
+/* Accessibility - Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .animate-key-generation,
+  .animate-security-pulse,
+  .animate-verification-step,
+  .animate-unlock-countdown,
+  .animate-badge-glow,
+  .animate-crypto-lock,
+  .animate-access-granted,
+  .animate-timer-tick,
+  .animate-nonce-generation {
+    animation: none;
+  }
+  
+  .beneficiary-card:hover,
+  .unlock-condition-option:hover {
+    transform: none;
+  }
+}

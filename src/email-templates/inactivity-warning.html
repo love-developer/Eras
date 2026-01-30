@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Account Inactivity Warning - Eras</title>
+</head>
+<body style="margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; background-color: #0f172a;">
+  <table width="100%" cellpadding="0" cellspacing="0" style="background-color: #0f172a;">
+    <tr>
+      <td align="center" style="padding: 40px 20px;">
+        <!-- Main Container -->
+        <table width="600" cellpadding="0" cellspacing="0" style="background: linear-gradient(135deg, #1e1b4b 0%, #7c2d12 100%); border-radius: 16px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.5);">
+          
+          <!-- Header with Alert Icon -->
+          <tr>
+            <td align="center" style="padding: 40px 20px; background: linear-gradient(to right, rgba(251,146,60,0.2), rgba(239,68,68,0.2)); border-bottom: 2px solid rgba(255,255,255,0.1);">
+              <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #fb923c, #ef4444); border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 16px;">
+                <span style="font-size: 32px;">⚠️</span>
+              </div>
+              <h1 style="margin: 0; font-size: 28px; color: white; font-weight: 700;">Action Required</h1>
+              <p style="margin: 8px 0 0 0; font-size: 16px; color: #fed7aa;">Your account will become inactive soon</p>
+            </td>
+          </tr>
+          
+          <!-- Main Content -->
+          <tr>
+            <td style="padding: 40px 30px;">
+              <p style="margin: 0 0 24px 0; font-size: 16px; line-height: 1.6; color: #e2e8f0;">
+                Hello <strong style="color: white;">{{userName}}</strong>,
+              </p>
+              
+              <p style="margin: 0 0 24px 0; font-size: 16px; line-height: 1.6; color: #e2e8f0;">
+                We noticed you haven't logged into your Eras account in <strong style="color: white;">{{daysSinceLastLogin}} days</strong>. According to your Legacy Access settings, your account will be marked as inactive in:
+              </p>
+              
+              <!-- Countdown Box -->
+              <table width="100%" cellpadding="0" cellspacing="0" style="margin: 24px 0;">
+                <tr>
+                  <td align="center">
+                    <div style="background: rgba(251,146,60,0.2); border: 2px solid #fb923c; padding: 24px; border-radius: 12px; display: inline-block;">
+                      <div style="font-size: 48px; font-weight: 700; color: #fb923c; margin-bottom: 8px;">
+                        {{daysUntilInactive}}
+                      </div>
+                      <div style="font-size: 18px; color: #fed7aa; font-weight: 600;">
+                        {{daysText}}
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </table>
+              
+              <!-- What Happens Box -->
+              <div style="background: rgba(239,68,68,0.15); border-left: 4px solid #ef4444; padding: 20px; margin: 24px 0; border-radius: 8px;">
+                <h3 style="margin: 0 0 12px 0; font-size: 16px; color: #fecaca; font-weight: 600;">What Happens When Your Account Becomes Inactive?</h3>
+                <ul style="margin: 0; padding-left: 20px; color: #e2e8f0; font-size: 14px; line-height: 1.8;">
+                  <li>Your designated beneficiaries will be notified</li>
+                  <li>They'll receive access to your time capsules and memories</li>
+                  <li>Your account will remain preserved but accessible to beneficiaries</li>
+                  <li>You can reactivate anytime by logging in</li>
+                </ul>
+              </div>
+              
+              <!-- Beneficiaries List or Warning -->
+              {{beneficiariesSection}}
+              
+              <!-- Action Buttons -->
+              <table width="100%" cellpadding="0" cellspacing="0" style="margin: 32px 0;">
+                <tr>
+                  <td align="center">
+                    <!-- Primary CTA -->
+                    <a href="{{loginUrl}}" style="display: inline-block; padding: 16px 40px; background: linear-gradient(135deg, #10b981, #059669); color: white; text-decoration: none; border-radius: 8px; font-weight: 600; font-size: 18px; box-shadow: 0 4px 12px rgba(16,185,129,0.4); margin-bottom: 12px;">
+                      ✅ Log In to Keep Account Active
+                    </a>
+                  </td>
+                </tr>
+                <tr>
+                  <td align="center" style="padding-top: 12px;">
+                    <!-- Secondary CTA -->
+                    <a href="{{settingsUrl}}" style="display: inline-block; padding: 12px 32px; background: rgba(255,255,255,0.1); color: white; text-decoration: none; border-radius: 8px; font-weight: 500; font-size: 14px; border: 1px solid rgba(255,255,255,0.2);">
+                      ⚙️ Manage Legacy Settings
+                    </a>
+                  </td>
+                </tr>
+              </table>
+              
+              <p style="margin: 24px 0 0 0; font-size: 14px; line-height: 1.6; color: #94a3b8; text-align: center;">
+                Simply logging in will reset your inactivity timer. No other action needed.
+              </p>
+            </td>
+          </tr>
+          
+          <!-- Footer -->
+          <tr>
+            <td style="padding: 30px; background: rgba(0,0,0,0.3); border-top: 1px solid rgba(255,255,255,0.1);">
+              <p style="margin: 0 0 12px 0; font-size: 13px; color: #94a3b8; text-align: center;">
+                Last login: <strong style="color: #cbd5e1;">{{lastLoginDate}}</strong>
+              </p>
+              <p style="margin: 0; font-size: 12px; color: #64748b; text-align: center;">
+                Questions? Reply to this email or visit our help center.
+              </p>
+            </td>
+          </tr>
+          
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>

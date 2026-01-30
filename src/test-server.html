@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eras Server Test</title>
+    <style>
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+        }
+        button {
+            background: #3b82f6;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+        button:hover {
+            background: #2563eb;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+        .success {
+            background: #d1fae5;
+            border: 1px solid #10b981;
+            color: #047857;
+        }
+        .error {
+            background: #fee2e2;
+            border: 1px solid #ef4444;
+            color: #991b1b;
+        }
+        .loading {
+            background: #dbeafe;
+            border: 1px solid #3b82f6;
+            color: #1e40af;
+        }
+        .info {
+            background: #fef3c7;
+            border: 1px solid #f59e0b;
+            color: #92400e;
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🧪 Eras Server Test</h1>
+        <p class="subtitle">Test Supabase Edge Function connectivity</p>
+
+        <div class="info">
+            <strong>ℹ️ Purpose:</strong> This page tests if the Eras backend server is reachable and responding correctly.
+        </div>
+
+        <div>
+            <button onclick="testBasicHealth()">Test Basic Health</button>
+            <button onclick="testFullHealth()">Test Full Health</button>
+            <button onclick="testCapsules()">Test Capsules Endpoint</button>
+            <button onclick="testAll()">Run All Tests</button>
+        </div>
+
+        <div id="result"></div>
+    </div>
+
+    <script>
+        const SERVER_URL = 'https://apdfvpgaznpqlordkipw.supabase.co/functions/v1/make-server-f9be53a7';
+        
+        function showResult(message, type = 'loading') {
+            const resultDiv = document.getElementById('result');
+            resultDiv.className = `result ${type}`;
+            resultDiv.textContent = message;
+        }
+
+        async function testBasicHealth() {
+            showResult('Testing basic health endpoint...');
+            try {
+                const start = Date.now();
+                const response = await fetch(`${SERVER_URL}/health-basic`, {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                });
+                const duration = Date.now() - start;
+                
+                if (response.ok) {
+                    const data = await response.json();
+                    showResult(`✅ SUCCESS (${duration}ms)\n\nStatus: ${response.status}\n\n${JSON.stringify(data, null, 2)}`, 'success');
+                } else {
+                    const text = await response.text();
+                    showResult(`❌ FAILED (${duration}ms)\n\nStatus: ${response.status}\n\nResponse:\n${text}`, 'error');
+                }
+            } catch (error) {
+                showResult(`❌ ERROR\n\n${error.message}\n\nPossible causes:\n- Server not deployed\n- Network error\n- CORS issue`, 'error');
+            }
+        }
+
+        async function testFullHealth() {
+            showResult('Testing full health endpoint...');
+            try {
+                const start = Date.now();
+                const response = await fetch(`${SERVER_URL}/health`, {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                });
+                const duration = Date.now() - start;
+                
+                if (response.ok) {
+                    const data = await response.json();
+                    showResult(`✅ SUCCESS (${duration}ms)\n\nStatus: ${response.status}\n\n${JSON.stringify(data, null, 2)}`, 'success');
+                } else {
+                    const text = await response.text();
+                    showResult(`❌ FAILED (${duration}ms)\n\nStatus: ${response.status}\n\nResponse:\n${text}`, 'error');
+                }
+            } catch (error) {
+                showResult(`❌ ERROR\n\n${error.message}\n\nPossible causes:\n- Server not deployed\n- Network error\n- CORS issue`, 'error');
+            }
+        }
+
+        async function testCapsules() {
+            showResult('Testing capsules endpoint...');
+            try {
+                const start = Date.now();
+                const response = await fetch(`${SERVER_URL}/api/capsules`, {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': 'Bearer test-token' // Will fail auth but should respond
+                    }
+                });
+                const duration = Date.now() - start;
+                
+                const text = await response.text();
+                if (response.status === 401) {
+                    showResult(`✅ SERVER RESPONDING (${duration}ms)\n\nStatus: 401 Unauthorized (Expected)\n\nThis means the server is running but requires authentication.\n\nResponse:\n${text}`, 'success');
+                } else if (response.ok) {
+                    showResult(`✅ SUCCESS (${duration}ms)\n\nStatus: ${response.status}\n\nResponse:\n${text}`, 'success');
+                } else {
+                    showResult(`⚠️ UNEXPECTED STATUS (${duration}ms)\n\nStatus: ${response.status}\n\nResponse:\n${text}`, 'error');
+                }
+            } catch (error) {
+                showResult(`❌ ERROR\n\n${error.message}\n\nThe server is not responding at all.`, 'error');
+            }
+        }
+
+        async function testAll() {
+            showResult('Running all tests...\n\n', 'loading');
+            
+            const tests = [
+                { name: 'Basic Health', fn: testBasicHealth },
+                { name: 'Full Health', fn: testFullHealth },
+                { name: 'Capsules Endpoint', fn: testCapsules }
+            ];
+
+            for (const test of tests) {
+                showResult(`Running: ${test.name}...`, 'loading');
+                await test.fn();
+                await new Promise(resolve => setTimeout(resolve, 1000));
+            }
+        }
+
+        // Auto-run basic health check on load
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                showResult('Ready to test! Click a button to begin.', 'loading');
+            }, 100);
+        });
+    </script>
+</body>
+</html>

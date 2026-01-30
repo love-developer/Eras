@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Option 1: Minimalist Modern - ERAS Classic View</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      padding: 40px 20px;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      color: white;
+      margin-bottom: 10px;
+      font-size: 32px;
+    }
+
+    .subtitle {
+      color: #94a3b8;
+      margin-bottom: 40px;
+      font-size: 16px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 12px;
+      margin-bottom: 40px;
+    }
+
+    /* MINIMALIST DESIGN */
+    .capsule-card {
+      background: rgba(30, 41, 59, 0.8);
+      border-radius: 8px;
+      padding: 16px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      min-height: 100px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+      transition: all 0.2s ease;
+      cursor: pointer;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Left Border Accent - Apple Style */
+    .capsule-card::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 4px;
+    }
+
+    .capsule-card.scheduled::before { background: #3b82f6; }
+    .capsule-card.delivered::before { background: #10b981; }
+    .capsule-card.received::before { background: #facc15; }
+    .capsule-card.draft::before { background: #a855f7; }
+
+    .capsule-card:hover {
+      background: rgba(30, 41, 59, 0.95);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Status Icon */
+    .status-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+
+    .capsule-card.scheduled .status-icon { background: #3b82f6; }
+    .capsule-card.delivered .status-icon { background: #10b981; }
+    .capsule-card.received .status-icon { background: #facc15; }
+    .capsule-card.draft .status-icon { background: #a855f7; }
+
+    /* Content */
+    .content {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .title-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 8px;
+    }
+
+    .title {
+      color: white;
+      font-size: 15px;
+      font-weight: 600;
+      line-height: 1.3;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      flex: 1;
+    }
+
+    .metadata {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: #94a3b8;
+      font-size: 13px;
+      margin-bottom: 6px;
+      flex-wrap: wrap;
+    }
+
+    .meta-item {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      white-space: nowrap;
+    }
+
+    .stats {
+      display: flex;
+      gap: 12px;
+      font-size: 12px;
+      color: #64748b;
+    }
+
+    .menu-button {
+      background: rgba(0, 0, 0, 0.2);
+      border: none;
+      color: white;
+      width: 28px;
+      height: 28px;
+      border-radius: 4px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s;
+      flex-shrink: 0;
+    }
+
+    .menu-button:hover {
+      background: rgba(0, 0, 0, 0.4);
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 3px 6px;
+      border-radius: 4px;
+      font-size: 10px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+
+    .badge.status {
+      color: white;
+    }
+
+    .capsule-card.scheduled .badge.status { background: #3b82f6; }
+    .capsule-card.delivered .badge.status { background: #10b981; }
+    .capsule-card.received .badge.status { background: #facc15; color: #1e293b; }
+    .capsule-card.draft .badge.status { background: #a855f7; }
+
+    .badge.new {
+      background: linear-gradient(135deg, #ec4899, #f43f5e);
+      color: white;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.8; }
+    }
+
+    .performance-note {
+      background: rgba(16, 185, 129, 0.1);
+      border: 2px solid #10b981;
+      border-radius: 12px;
+      padding: 20px;
+      color: white;
+      margin-top: 40px;
+    }
+
+    .performance-note h3 {
+      color: #10b981;
+      margin-bottom: 12px;
+    }
+
+    .performance-note ul {
+      margin-left: 20px;
+      line-height: 1.8;
+    }
+
+    .performance-note strong {
+      color: #10b981;
+    }
+
+    /* Compact variation example */
+    .compact-demo {
+      margin-top: 60px;
+    }
+
+    .compact-demo h2 {
+      color: white;
+      margin-bottom: 20px;
+      font-size: 24px;
+    }
+
+    .compact-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🎨 Option 1: Minimalist Modern</h1>
+    <p class="subtitle">Clean left border accent + flat design = Apple/Notion aesthetic with maximum speed</p>
+
+    <div class="grid">
+      <!-- Scheduled Capsule -->
+      <div class="capsule-card scheduled">
+        <div class="status-icon">🕐</div>
+        <div class="content">
+          <div class="title-row">
+            <div class="title">My 2025 New Year Resolutions</div>
+            <button class="menu-button">⋮</button>
+          </div>
+          <div class="metadata">
+            <span class="meta-item">📅 January 1, 2025</span>
+            <span class="meta-item">👤 To: Future Me</span>
+          </div>
+          <div class="stats">
+            <span>📎 3</span>
+            <span>💬 0</span>
+            <span class="badge status">Scheduled</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Delivered Capsule -->
+      <div class="capsule-card delivered">
+        <div class="status-icon">✓</div>
+        <div class="content">
+          <div class="title-row">
+            <div class="title">Happy Birthday Sarah! 🎂</div>
+            <button class="menu-button">⋮</button>
+          </div>
+          <div class="metadata">
+            <span class="meta-item">📅 December 20, 2024</span>
+            <span class="meta-item">👤 To: Sarah Johnson</span>
+          </div>
+          <div class="stats">
+            <span>📎 5</span>
+            <span>💬 12</span>
+            <span class="badge status">Delivered</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Received Capsule (New) -->
+      <div class="capsule-card received">
+        <div class="status-icon">📬</div>
+        <div class="content">
+          <div class="title-row">
+            <div class="title">Memories from Our Wedding Day</div>
+            <button class="menu-button">⋮</button>
+          </div>
+          <div class="metadata">
+            <span class="meta-item">📅 Received 2 days ago</span>
+            <span class="meta-item">👤 From: Mom & Dad</span>
+          </div>
+          <div class="stats">
+            <span>📎 15</span>
+            <span>💬 8</span>
+            <span class="badge new">🆕 New</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Draft Capsule -->
+      <div class="capsule-card draft">
+        <div class="status-icon">📝</div>
+        <div class="content">
+          <div class="title-row">
+            <div class="title">Untitled Draft</div>
+            <button class="menu-button">⋮</button>
+          </div>
+          <div class="metadata">
+            <span class="meta-item">📅 Last edited today</span>
+            <span class="meta-item">👤 No recipient yet</span>
+          </div>
+          <div class="stats">
+            <span>📎 1</span>
+            <span>💬 0</span>
+            <span class="badge status">Draft</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- More Examples -->
+      <div class="capsule-card scheduled">
+        <div class="status-icon">🕐</div>
+        <div class="content">
+          <div class="title-row">
+            <div class="title">Christmas Surprise for the Kids</div>
+            <button class="menu-button">⋮</button>
+          </div>
+          <div class="metadata">
+            <span class="meta-item">📅 December 25, 2024</span>
+            <span class="meta-item">👤 To: Family Group</span>
+          </div>
+          <div class="stats">
+            <span>📎 8</span>
+            <span>💬 0</span>
+            <span class="badge status">Scheduled</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="capsule-card delivered">
+        <div class="status-icon">✓</div>
+        <div class="content">
+          <div class="title-row">
+            <div class="title">Thank You Note to My Mentor</div>
+            <button class="menu-button">⋮</button>
+          </div>
+          <div class="metadata">
+            <span class="meta-item">📅 November 15, 2024</span>
+            <span class="meta-item">👤 To: Dr. Smith</span>
+          </div>
+          <div class="stats">
+            <span>📎 2</span>
+            <span>💬 5</span>
+            <span class="badge status">Delivered</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="performance-note">
+      <h3>⚡ Performance Benefits</h3>
+      <ul>
+        <li><strong>Zero gradients</strong> - Only solid colors throughout</li>
+        <li><strong>No backdrop blur</strong> - Clean transparency</li>
+        <li><strong>Flat design</strong> - Minimal shadow usage (one shadow on hover)</li>
+        <li><strong>Single border</strong> - 4px left accent (::before pseudo-element)</li>
+        <li><strong>No transforms</strong> - Opacity changes only for hover</li>
+        <li><strong>Ultra-clean DOM</strong> - Simplest structure possible</li>
+        <li><strong>Information density</strong> - All metadata visible at once</li>
+        <li><strong>Estimated Speed</strong> - 90% faster with folders containing 10+ capsules</li>
+      </ul>
+    </div>
+
+    <div class="compact-demo">
+      <h2>💡 Bonus: Even More Compact Variation</h2>
+      <p class="subtitle">For power users who want maximum density (can fit 2x more on screen)</p>
+      
+      <div class="compact-grid">
+        <div class="capsule-card scheduled" style="min-height: 70px; padding: 12px;">
+          <div class="status-icon" style="width: 28px; height: 28px; font-size: 14px;">🕐</div>
+          <div class="content">
+            <div class="title-row" style="margin-bottom: 4px;">
+              <div class="title" style="font-size: 14px;">My 2025 New Year Resolutions</div>
+              <button class="menu-button" style="width: 24px; height: 24px;">⋮</button>
+            </div>
+            <div class="metadata" style="font-size: 12px;">
+              <span class="meta-item">Jan 1</span>
+              <span class="meta-item">Future Me</span>
+              <span>📎 3</span>
+              <span>💬 0</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="capsule-card delivered" style="min-height: 70px; padding: 12px;">
+          <div class="status-icon" style="width: 28px; height: 28px; font-size: 14px;">✓</div>
+          <div class="content">
+            <div class="title-row" style="margin-bottom: 4px;">
+              <div class="title" style="font-size: 14px;">Happy Birthday Sarah! 🎂</div>
+              <button class="menu-button" style="width: 24px; height: 24px;">⋮</button>
+            </div>
+            <div class="metadata" style="font-size: 12px;">
+              <span class="meta-item">Dec 20</span>
+              <span class="meta-item">Sarah Johnson</span>
+              <span>📎 5</span>
+              <span>💬 12</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="capsule-card received" style="min-height: 70px; padding: 12px;">
+          <div class="status-icon" style="width: 28px; height: 28px; font-size: 14px;">📬</div>
+          <div class="content">
+            <div class="title-row" style="margin-bottom: 4px;">
+              <div class="title" style="font-size: 14px;">Memories from Our Wedding Day</div>
+              <button class="menu-button" style="width: 24px; height: 24px;">⋮</button>
+            </div>
+            <div class="metadata" style="font-size: 12px;">
+              <span class="meta-item">2 days ago</span>
+              <span class="meta-item">Mom & Dad</span>
+              <span>📎 15</span>
+              <span>💬 8</span>
+              <span class="badge new" style="font-size: 9px;">NEW</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
