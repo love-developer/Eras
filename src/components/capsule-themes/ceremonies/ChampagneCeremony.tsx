@@ -1,7 +1,9 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Wine, Sparkles, Heart } from 'lucide-react';
-import { getOptimalParticleCount } from '@/utils/performance';
+// import { getOptimalParticleCount } from '@/utils/performance';
+import { getOptimalParticleCount, getOptimalDuration } from '../../../utils/performance';
+
 
 interface ChampagneCeremonyProps {
   onComplete: () => void;
