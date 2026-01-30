@@ -308,7 +308,7 @@ await supabase.auth.updateUser({
 ```
 
 ### **Toast Notifications:**
-- Uses `sonner@2.0.3` for all toast messages
+- Uses `sonner` for all toast messages
 - Consistent branding and UX
 - Educational messages with "Why?" actions
 

@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { TitleDisplay, TitleBadge } from './TitleDisplay';
 import { useTitles } from '../contexts/TitlesContext';
 import { TitleData } from '../hooks/useTitles';
-import { toast } from 'sonner@2.0.3';
+import { toast } from 'sonner';
 
 interface TitleSelectorProps {
   isOpen: boolean;

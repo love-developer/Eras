@@ -6,7 +6,7 @@ import { Label } from './ui/label';
 import { Badge } from './ui/badge';
 import { Input } from './ui/input';
 import { Shield, Users, Eye, Download, Globe, Info, CheckCircle2, ChevronRight, X, UserPlus, Mail, Trash2 } from 'lucide-react';
-import { toast } from 'sonner@2.0.3';
+import { toast } from 'sonner';
 import { validateFolderLegacyAccess } from '../utils/legacyAccessInheritance';
 import type { FolderLegacyAccess, FolderBeneficiary } from '../utils/legacyAccessInheritance';
 

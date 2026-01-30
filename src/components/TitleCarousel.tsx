@@ -17,7 +17,7 @@ import {
   Copy,
 } from "lucide-react";
 import { TitleData } from "../hooks/useTitles";
-import { toast } from "sonner@2.0.3";
+import { toast } from "sonner";
 import { getTitleConfig } from "../utils/titleConfigs";
 
 interface TitleCarouselProps {

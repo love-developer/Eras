@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { FileBox, Mic, Send, RotateCcw, Play, Sparkles } from 'lucide-react';
-import { toast } from 'sonner@2.0.3';
+import { toast } from 'sonner';
 
 interface MediaItem {
   id: string;

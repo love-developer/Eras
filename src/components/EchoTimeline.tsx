@@ -16,7 +16,7 @@ import { MessageCircle, Heart, FileText, Loader2, RefreshCw } from 'lucide-react
 import { projectId, publicAnonKey } from '../utils/supabase/info';
 import { supabase } from '../utils/supabase/client';
 import { formatDistanceToNow } from 'date-fns@4.1.0';
-import { toast } from 'sonner@2.0.3';
+import { toast } from 'sonner';
 
 interface Echo {
   id: string;

@@ -83,7 +83,7 @@ import {
 import { DatabaseService } from '../utils/supabase/database';
 import { supabase } from '../utils/supabase/client';
 import { projectId, publicAnonKey } from '../utils/supabase/info';
-import { toast } from 'sonner@2.0.3';
+import { toast } from 'sonner';
 import { MediaThumbnail } from './MediaThumbnail';
 
 // AI Filter Presets

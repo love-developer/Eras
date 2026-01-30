@@ -69,7 +69,7 @@ import {
 import { format, addDays } from 'date-fns@4.1.0';
 import { DatabaseService } from '../utils/supabase/database';
 import { supabase } from '../utils/supabase/client';
-import { toast } from 'sonner@2.0.3';
+import { toast } from 'sonner';
 import { MediaPreview } from './MediaPreview';
 import { MediaThumbnail } from './MediaThumbnail';
 import { MediaPreviewModal } from './MediaPreviewModal';

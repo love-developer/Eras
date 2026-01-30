@@ -1,7 +1,7 @@
 import { projectId, publicAnonKey } from './info';
 import { TimeCapsule, MediaFile } from './client';
 import { supabase } from './client';
-import { toast } from 'sonner@2.0.3';
+import { toast } from 'sonner';
 
 // KV Store based database service - no separate tables needed
 export class DatabaseService {

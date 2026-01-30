@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import confetti from 'canvas-confetti';
 import { getThemeConfig } from './ThemeRegistry';
 import { Gift, Lock } from 'lucide-react';
-import { toast } from 'sonner@2.0.3';
+import { toast } from 'sonner';
 import { getOptimalParticleCount, getOptimalDuration } from '@/utils/performance';
 import { EternalFlameCeremony } from './ceremonies/EternalFlameCeremony';
 import { SolarReturnCeremony } from './ceremonies/SolarReturnCeremony';

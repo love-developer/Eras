@@ -8,7 +8,7 @@ import { Calendar } from './ui/calendar';
 import { Popover, PopoverContent, PopoverTrigger } from './ui/popover';
 import { Clock, Calendar as CalendarIcon, Globe, Edit } from 'lucide-react';
 import { format, setYear, setMonth, isToday } from 'date-fns@4.1.0';
-import { toast } from 'sonner@2.0.3';
+import { toast } from 'sonner';
 import { DatabaseService } from '../utils/supabase/database';
 import { TIME_ZONES, getUserTimeZone, formatInUserTimeZone, convertToUTCForStorage } from '../utils/timezone';
 

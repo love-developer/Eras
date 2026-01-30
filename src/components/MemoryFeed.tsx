@@ -23,7 +23,7 @@ import { DatabaseService } from '../utils/supabase/database';
 import { formatDistanceToNow, format } from 'date-fns';
 import type { TimeCapsule } from '../utils/supabase/client';
 import { useIsMobile } from './ui/use-mobile';
-import { toast } from 'sonner@2.0.3';
+import { toast } from 'sonner';
 
 import { PullToRefresh } from './PullToRefresh';
 import { useOfflineSync } from '../hooks/useOfflineSync';

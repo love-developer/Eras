@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Button } from './ui/button';
 import { Crown, Play } from 'lucide-react';
 import { TitleRewardModal } from './TitleRewardModal';
-import { toast } from 'sonner@2.0.3';
+import { toast } from 'sonner';
 
 /**
  * 👑 Title Unlock Preview Component

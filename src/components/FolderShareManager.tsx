@@ -30,7 +30,7 @@ import {
   Share2, Link2, Copy, Trash2, Eye, Download, Lock, 
   Calendar, CheckCircle, AlertCircle, ExternalLink, Loader2, QrCode
 } from 'lucide-react';
-import { toast } from 'sonner@2.0.3';
+import { toast } from 'sonner';
 import { projectId, publicAnonKey } from '../utils/supabase/info';
 import { useAuth } from '../contexts/AuthContext';
 import QRCodeLib from 'qrcode';

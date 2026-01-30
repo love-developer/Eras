@@ -4,7 +4,7 @@ import { Trash2, RefreshCw, AlertTriangle, Undo2 } from 'lucide-react';
 import { Button } from './ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card';
 import { Badge } from './ui/badge';
-import { toast } from 'sonner@2.0.3';
+import { toast } from 'sonner';
 import { supabase } from '../utils/supabase/client';
 import { formatDistanceToNow } from 'date-fns@4.1.0';
 import { logger } from '../utils/logger';

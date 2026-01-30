@@ -9,7 +9,7 @@ import { CeremonyOverlay } from './capsule-themes/CeremonyOverlay';
 import { EchoPanel } from './EchoPanel';
 import { EchoSocialTimeline } from './EchoSocialTimeline';
 import { MediaThumbnail } from './MediaThumbnail';
-import { toast } from 'sonner@2.0.3';
+import { toast } from 'sonner';
 import { DatabaseService } from '../utils/supabase/database';
 import { mediaCache } from '../utils/mediaCache';
 

@@ -5,7 +5,7 @@ import { Badge } from './ui/badge';
 import { Separator } from './ui/separator';
 import { AlertCircle, CheckCircle, Loader2, RefreshCw } from 'lucide-react';
 import { DatabaseService } from '../utils/supabase/database';
-import { toast } from 'sonner@2.0.3';
+import { toast } from 'sonner';
 
 export function BackendDebug() {
   const [isTestingConnection, setIsTestingConnection] = useState(false);

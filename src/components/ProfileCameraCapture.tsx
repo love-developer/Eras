@@ -1,6 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { Camera, FlipHorizontal, X, Check } from 'lucide-react';
-import { toast } from 'sonner@2.0.3';
+import { toast } from 'sonner';
 
 interface ProfileCameraCaptureProps {
   onCapture: (imageDataUrl: string) => void;

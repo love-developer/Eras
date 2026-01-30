@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { useProfile } from '../hooks/useProfile';
 import { ProfileCameraCapture } from './ProfileCameraCapture';
 import { ProfileImageCrop } from './ProfileImageCrop';
-import { toast } from 'sonner@2.0.3';
+import { toast } from 'sonner';
 
 interface ProfilePictureUploadModalProps {
   isOpen: boolean;

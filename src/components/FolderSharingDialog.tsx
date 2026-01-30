@@ -42,7 +42,7 @@ import {
 import { format, addDays, addWeeks, addMonths } from 'date-fns';
 import { supabase } from '../utils/supabase/client';
 import { projectId, publicAnonKey } from '../utils/supabase/info';
-import { toast } from 'sonner@2.0.3';
+import { toast } from 'sonner';
 import { useIsMobile } from './ui/use-mobile';
 
 interface FolderSharingDialogProps {

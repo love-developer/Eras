@@ -33,7 +33,7 @@ import { MultiRecipientSelector } from './MultiRecipientSelector';
 import { supabase } from '../utils/supabase/client';
 import { DatabaseService } from '../utils/supabase/database';
 import { mediaCache } from '../utils/mediaCache';
-import { toast } from 'sonner@2.0.3';
+import { toast } from 'sonner';
 import { getUserTimeZone, TIME_ZONES, getTimeZoneDisplay, convertToUTCForStorage, fromUTC } from '../utils/timezone';
 import { projectId, publicAnonKey } from '../utils/supabase/info';
 import { compressVideo, compressImage, shouldCompress } from '../utils/video-compression';

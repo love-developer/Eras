@@ -4,7 +4,7 @@ import { Avatar } from './Avatar';
 import { useProfile } from '../hooks/useProfile';
 import { useAuth } from '../hooks/useAuth';
 import { ProfilePictureUploadModal } from './ProfilePictureUploadModal';
-import { toast } from 'sonner@2.0.3';
+import { toast } from 'sonner';
 
 /**
  * 🖼️ PROFILE PICTURE CARD

@@ -66,7 +66,7 @@ import {
   ChevronDown,
   ChevronUp
 } from 'lucide-react';
-import { toast } from 'sonner@2.0.3';
+import { toast } from 'sonner';
 
 // Emotional Filters for Photos & Videos (Eras-themed) - Streamlined to 4 distinctive filters
 const EMOTIONAL_FILTERS = [

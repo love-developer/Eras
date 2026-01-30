@@ -12,7 +12,7 @@ Without the `<Toaster />` component in the React tree, ALL `toast()` calls fail 
 **File:** `/App.tsx`
 
 ```typescript
-import { toast, Toaster } from 'sonner@2.0.3';
+import { toast, Toaster } from 'sonner';
 ```
 
 ### 2. Added Toaster Component to App

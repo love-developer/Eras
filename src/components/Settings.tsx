@@ -52,7 +52,7 @@ import {
   X
 } from 'lucide-react';
 import { supabase } from '../utils/supabase/client';
-import { toast } from 'sonner@2.0.3';
+import { toast } from 'sonner';
 import { projectId } from '../utils/supabase/info';
 import { DatabaseService } from '../utils/supabase/database';
 import { motion, AnimatePresence } from 'motion/react';

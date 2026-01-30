@@ -9,7 +9,7 @@ import {
   CheckCircle, AlertCircle, Inbox, Sparkles, ArrowRight
 } from 'lucide-react';
 import { format, formatDistanceToNow, isAfter, startOfDay } from 'date-fns@4.1.0';
-import { toast } from 'sonner@2.0.3';
+import { toast } from 'sonner';
 import { DatabaseService } from '../utils/supabase/database';
 import { supabase } from '../utils/supabase/client';
 import { MediaPreviewModal } from './MediaPreviewModal';

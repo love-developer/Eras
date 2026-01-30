@@ -4,7 +4,7 @@ import { X, Share2, Crown, Sparkles } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import confetti from 'canvas-confetti';
 import { TitleDisplay } from './TitleDisplay';
-import { toast } from 'sonner@2.0.3';
+import { toast } from 'sonner';
 
 interface TitleRewardModalProps {
   title: string;

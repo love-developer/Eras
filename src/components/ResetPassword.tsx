@@ -5,7 +5,7 @@ import { Input } from './ui/input';
 import { Label } from './ui/label';
 import { Lock, Eye, EyeOff, CheckCircle, X, Check } from 'lucide-react';
 import { MomentPrismLogo } from './MomentPrismLogo';
-import { toast } from 'sonner@2.0.3';
+import { toast } from 'sonner';
 import { projectId, publicAnonKey } from '../utils/supabase/info';
 
 export function ResetPassword({ onSuccess }: { onSuccess?: () => void }) {

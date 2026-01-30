@@ -3,7 +3,7 @@ import { Button } from './ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 import { CheckCircle, X, Loader2 } from 'lucide-react';
 import { MomentPrismLogo } from './MomentPrismLogo';
-import { toast } from 'sonner@2.0.3';
+import { toast } from 'sonner';
 import { projectId, publicAnonKey } from '../utils/supabase/info';
 
 export function VerifyEmail({ onSuccess }: { onSuccess?: () => void }) {

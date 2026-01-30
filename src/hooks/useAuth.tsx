@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useMemo, useCallback } from 'react';
 import { supabase } from '../utils/supabase/client';
 import { DatabaseService } from '../utils/supabase/database';
-import { toast } from 'sonner@2.0.3';
+import { toast } from 'sonner';
 import { CacheService } from '../utils/cache';
 
 export function useAuth() {

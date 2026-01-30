@@ -17,7 +17,7 @@
 
 1. **Added Toast Import:**
    ```typescript
-   import { toast } from 'sonner@2.0.3';
+   import { toast } from 'sonner';
    ```
 
 2. **Added Success Toast Feedback:**
@@ -252,7 +252,7 @@ await broadcast({ userId: commentAuthorId, type: 'new_notification', data: notif
 
 ### Issue: Toast doesn't appear
 **Check:**
-1. Is Sonner imported? `import { toast } from 'sonner@2.0.3';`
+1. Is Sonner imported? `import { toast } from 'sonner';`
 2. Is `<Toaster />` component rendered in App.tsx?
 3. Check browser console for errors
 

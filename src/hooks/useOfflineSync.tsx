@@ -8,7 +8,7 @@ import {
   getCachedCapsules
 } from '../utils/offline-storage';
 import { supabase } from '../utils/supabase/client';
-import { toast } from 'sonner@2.0.3';
+import { toast } from 'sonner';
 import { projectId } from '../utils/supabase/info';
 
 export function useOfflineSync() {

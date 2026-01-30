@@ -8,7 +8,7 @@ import React, { useState } from 'react';
 import { Button } from './ui/button';
 import { motion, AnimatePresence } from 'motion/react';
 import { Heart, Laugh, Frown, PartyPopper, AlertCircle, Sparkles, MessageCircle, Send } from 'lucide-react';
-import { toast } from 'sonner@2.0.3';
+import { toast } from 'sonner';
 import { projectId, publicAnonKey } from '../utils/supabase/info';
 import { supabase } from '../utils/supabase/client';
 import { EchoTextModal } from './EchoTextModal';

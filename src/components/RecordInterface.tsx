@@ -14,7 +14,7 @@ import {
 import { RecordingModal } from './RecordingModal';
 import { supabase } from '../utils/supabase/client';
 import { projectId } from '../utils/supabase/info';
-import { toast } from 'sonner@2.0.3';
+import { toast } from 'sonner';
 import { uploadWithTUS } from '../utils/tus-upload';
 
 // ZOOM FIX v10: 1x=20%, 2x=40% native zoom + condensed spacing
