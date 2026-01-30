@@ -30,7 +30,7 @@
  * - Retention: 30 days
  */
 
-import { createClient } from 'jsr:@supabase/supabase-js@2.49.8';
+import { createClient } from 'jsr:@supabase/supabase-js';
 
 // CORS headers for function
 const corsHeaders = {

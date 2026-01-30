@@ -7,7 +7,7 @@
  * ALL server files must import from here instead of creating their own clients.
  */
 
-import { createClient } from "jsr:@supabase/supabase-js@2.49.8";
+import { createClient } from "jsr:@supabase/supabase-js";
 
 let supabaseInstance: ReturnType<typeof createClient> | null = null;
 
