@@ -921,6 +921,8 @@ export function TitleRewardModalEnhanced({
                                 ? titleColors[i % titleColors.length]
                                 : config.colors[i % config.colors.length],
                             opacity: 0.8,
+                            left: '50%',
+                            top: '50%',
                           }}
                           initial={{ scale: 0, opacity: 0 }}
                           animate={{
@@ -934,10 +936,6 @@ export function TitleRewardModalEnhanced({
                             delay: Math.random() * 0.5,
                             repeat: Infinity,
                             repeatDelay: Math.random() * 1.5,
-                          }}
-                          style={{
-                            left: "50%",
-                            top: "50%",
                           }}
                         />
                       ))}

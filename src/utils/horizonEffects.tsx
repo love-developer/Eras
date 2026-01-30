@@ -2505,13 +2505,6 @@ export function getHorizonEffects(
       effects.chronicleWeaverLandscape = <ChronicleWeaverLandscape key="chronicle-weaver-landscape" colorTheme={colorTheme} />;
       break;
 
-    case 'Chronicler':
-      effects.inkSpills = <InkSpills key="ink" colorTheme={colorTheme} />;
-      effects.pageTurning = <PageTurning key="pages" colorTheme={colorTheme} />;
-      effects.quillFeathers = <QuillFeathers key="feathers" colorTheme={colorTheme} />;
-      effects.chroniclerLandscape = <ChroniquerLandscape key="chronicler-landscape" colorTheme={colorTheme} />;
-      break;
-
     case 'Circle Builder':
       effects.circleBuilderLandscape = <CircleBuilderLandscape key="circle-builder-landscape" colorTheme={colorTheme} />;
       break;
