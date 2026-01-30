@@ -15,7 +15,7 @@
         'recharts@2.15.2': 'recharts',
         'react-resizable-panels@2.1.7': 'react-resizable-panels',
         'react-hook-form@7.55.0': 'react-hook-form',
-        'react-easy-crop@5.0.8': 'react-easy-crop',
+        'react-easy-crop': 'react-easy-crop',
         'react-day-picker@8.10.1': 'react-day-picker',
         'next-themes@0.4.6': 'next-themes',
         'lucide-react@0.487.0': 'lucide-react',

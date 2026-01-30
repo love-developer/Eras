@@ -1,5 +1,5 @@
 import React, { useState, useCallback } from 'react';
-import Cropper from 'react-easy-crop@5.0.8';
+import Cropper from 'react-easy-crop';
 import { RotateCw, Check, X } from 'lucide-react';
 
 interface ProfileImageCropProps {
