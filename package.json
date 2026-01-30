@@ -68,6 +68,14 @@
       },
       "scripts": {
             "dev": "vite",
-            "build": "vite build"
-      }
+            "build": "vite build --emptyOutDir",
+            "preview": "vite preview",
+            "vercel-build": "npm run build"
+      },
+      "engines": {
+            "node": ">=16.0.0"
+      },
+      "browserslist": [
+            "defaults"
+      ]
 }
